@@ -41,11 +41,11 @@ Dentro desta pasta os setores da aplicação serão definidos pelas regras de ne
 
 > Pasta infra
 
-_infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas: `http e database`.
+* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas: `http e database`.
 
-* _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
+  * _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
 
-  * _entities/_ - Contém os modelos de dados, as informações abstraídas e representadas, essas informações podem ser salvas no banco de dados, também representações das relações entre entidades.
+    * _entities/_ - Contém os modelos de dados, as informações abstraídas e representadas, essas informações podem ser salvas no banco de dados, também representações das relações entre entidades.
 
 * _repositories/_ - Contém os arquivos que são uma ponte entre a aplicação e a fonte de dados. Abstração das lógicas comuns de operações no banco (CRUD).
 
