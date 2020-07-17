@@ -55,22 +55,22 @@ Dentro desta pasta os setores da aplicação serão definidos pelas regras de ne
 
 Conterá as seguintes pastas compartilhadas pela aplicação: `infra e http`.
 
-#### Pasta infra
+> Pasta infra
 
-_infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas: `http e database`.
+* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas: `http e orm`.
 
-* _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
+  * _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
 
-##### Pasta http
+> Pasta http
 
-_http_ - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
+* _http_ - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
 
-* _middlewares_ - Contém os middleware da aplicação.
+  * _middlewares_ - Contém os middleware da aplicação.
 
-* _errors/_ - Centraliza os erros conhecidos da aplicação em uma única pasta.
+  * _errors/_ - Centraliza os erros conhecidos da aplicação em uma única pasta.
 
-* _routes/_ - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
+  * _routes/_ - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
 
-* _server.ts_ - Arquivo que contém a classe que iniciará a Aplicação, contém o construtor que iniciará o servidor, as rotas, os middleware, arquivos de erros e conexão com o banco de dados.
+  * _server.ts_ - Arquivo que contém a classe que iniciará a Aplicação, contém o construtor que iniciará o servidor, as rotas, os middleware, arquivos de erros e conexão com o banco de dados.
 
 Obs.: As pastas **sempre** podem variar de acordo com a regra de negócio da aplicação e o time de desenvolvimento. São apenas sugestões para melhorar a organização do código.
