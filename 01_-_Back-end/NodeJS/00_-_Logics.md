@@ -1,10 +1,20 @@
-# Lógica Padrão
+# Back-end
 
 Nesta seção tentarei demonstrar a lógica por trás de uma aplicação NodeJS com TypeScript e JavaScript.
 
-Deixando de lado as regras de negócio, para funcionar uma aplicação deve seguir alguns passos para cada tecnologia/biblioteca adicionada, deve-se seguir um passo-a-passo para que esta funcione corretamente. Toda biblioteca/framework possui uma sequência lógica a ser seguida, por isso isolá-la da regra de negócio é um facilitador para explicar seu funcionamento.
+Deixando de lado regras de negócio específicas de aplicação, para funcionar uma aplicação deve seguir alguns passos para cada tecnologia/biblioteca adicionada, deve-se seguir um passo-a-passo para que esta funcione corretamente. Toda biblioteca/framework possui uma sequência lógica a ser seguida, por isso isolar esta regra de negócio da regra de negócio é um facilitador para explicar seu funcionamento.
 
-Essa página servirá de guia lógico de uma aplicação e suas conexões serão o detalhamento da lógica da biblioteca dada a versão da mesma. Serão explicados os motivos de uso e a lógica de implementação, bem como os links para suas respectivas documentações.
+Este será um guia lógico para aplicação com detalhamento da lógica de bibliotecas dada a versão especificada. Serão explicados os motivos do uso e a lógica de implementação, bem como os links para suas respectivas documentações.
+
+## DDD Domain Driven Design
+
+Se sua aplicação for expandir é recomendável separá-la em domínios e dentro dela seguir a lógica abaixo, mas não seguirei à risca o conceito, pois para seguir à risca a aplicação precisa ser muito grande. O foco serão pequenas e médias aplicações, se gosta do assunto vale à pena se aprofundar.
+
+A separação por pastas padrão será realizada dessa forma: `infra, entities, typeorm, repositories, http, migrations, modules, implementations, dtos, fakes, shared`, e serão explicados na [página de estrutura](#).
+
+*[Introdução](http://www.agileandart.com/2010/07/16/ddd-introducao-a-domain-driven-design/)
+*[Artigo](https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs)
+*[Livro](https://github.com/MGustav0/tutoriando/blob/master/assets/ddd-referencia.pdf)
 
 ## 1. Rotas
 
@@ -41,6 +51,6 @@ Seria necessária a criação de um novo repositório caso seja necessário a cr
 
 ## 4. Services
 
-Será o responável por abstrair as regras de negócio da aplicação, não têm acesso direto aos dados da requisição e da resposta.
+Será o responsável por abstrair as regras de negócio da aplicação, não têm acesso direto aos dados da requisição e da resposta.
 
 Ele recebe as informações, faz a tratativa de erros e/ou exceções, acessa o repositório.
