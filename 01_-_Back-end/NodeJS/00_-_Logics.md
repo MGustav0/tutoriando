@@ -12,9 +12,11 @@ Se sua aplicação for expandir é recomendável separá-la em domínios e dentr
 
 A separação por pastas padrão será realizada dessa forma: `infra, entities, typeorm, repositories, http, migrations, modules, implementations, dtos, fakes, shared`, e serão explicados na [página de estrutura](#).
 
-*[Introdução](http://www.agileandart.com/2010/07/16/ddd-introducao-a-domain-driven-design/)
-*[Artigo](https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs)
-*[Livro](https://github.com/MGustav0/tutoriando/blob/master/assets/ddd-referencia.pdf)
+* [Introdução](http://www.agileandart.com/2010/07/16/ddd-introducao-a-domain-driven-design/)
+
+* [Artigo](https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/august/data-points-coding-for-domain-driven-design-tips-for-data-focused-devs)
+
+* [Livro](https://github.com/MGustav0/tutoriando/blob/master/assets/ddd-referencia.pdf)
 
 ## 1. Rotas
 
