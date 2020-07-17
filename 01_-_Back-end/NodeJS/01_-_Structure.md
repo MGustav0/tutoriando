@@ -39,37 +39,39 @@ Dentro da pasta `/src` teremos estas pastas `infra, entities, typeorm, repositor
 
 Dentro desta pasta os setores da aplicação serão definidos pelas regras de negócio da aplicação, por exemplo, conterá uma pasta de usuários caso a aplicação tenha usuários, e dentro dessas pastas conterão as seguintes pastas:
 
-> Pasta infra
+* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas:
 
-* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas: `http e database`.
+  * _http_ - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
 
-  * _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
+    * _routes/_ - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
+  
+  * _middlewares_ - Contém os middleware da aplicação.
+
+  * _orm/_ - Contém as entidades baseadas no ORM em uso.
 
     * _entities/_ - Contém os modelos de dados, as informações abstraídas e representadas, essas informações podem ser salvas no banco de dados, também representações das relações entre entidades.
 
-* _repositories/_ - Contém os arquivos que são uma ponte entre a aplicação e a fonte de dados. Abstração das lógicas comuns de operações no banco (CRUD).
+  * _repositories/_ - Contém os arquivos que são uma ponte entre a aplicação e a fonte de dados. Abstração das lógicas comuns de operações no banco (CRUD), estes são específicos da regra de negócio.
 
-* _services/_ - Contém os arquivos de regras de negócio da aplicação.
+* _services/_ - Contém os arquivos que isolam regras de negócio da aplicação.
+
+* _repositories/_ - Contém os arquivos que são uma interface que isola o ORM dos repositórios da regra de negócio, ao trocar de ORM, basta alterar esses arquivos para o padrão do ORM escolhido.
 
 ### Pasta Shared
 
 Conterá as seguintes pastas compartilhadas pela aplicação: `infra e http`.
 
-> Pasta infra
+* _errors/_ - Centraliza os erros conhecidos da aplicação em uma única pasta.
 
-* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas: `http e orm`.
+* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas e arquivos:
 
-  * _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
+  * _http_ - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
 
-> Pasta http
-
-* _http_ - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
-
+    * _routes/_ - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
+  
   * _middlewares_ - Contém os middleware da aplicação.
-
-  * _errors/_ - Centraliza os erros conhecidos da aplicação em uma única pasta.
-
-  * _routes/_ - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
+  
+  * _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
 
   * _server.ts_ - Arquivo que contém a classe que iniciará a Aplicação, contém o construtor que iniciará o servidor, as rotas, os middleware, arquivos de erros e conexão com o banco de dados.
 

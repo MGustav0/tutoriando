@@ -22,9 +22,9 @@ Criar as rotas primeiramente é uma forma de estruturar a aplicação antes de p
 
 As rotas devem ser responsáveis apenas por: receber a requisição, chamar outro arquivo e devolver uma resposta. Pode ser responsável por transformar dados, como uma data.
 
-## 2. Models
+## 2. Entities
 
-Também conhecidos com entidades (entities) da aplicação, através delas que serão definidos os formatos dos dados que virão do Banco de Dados e irão para a aplicação trabalhar e vice-versa.
+É através delas que serão definidos os formatos dos dados que virão do Banco de Dados e irão para a aplicação trabalhar e vice-versa.
 
 ## 3. Repositories
 
