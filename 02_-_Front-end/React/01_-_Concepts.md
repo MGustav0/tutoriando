@@ -27,7 +27,7 @@ function handleAddProject() {
 }
 ```
 
-Dissecando:
+#### Dissecando
 
 `<Button onClick={this.handleAddProject}>`
 Onde
@@ -82,7 +82,7 @@ return (
 
 #### Imutabilidade
 
-Segundo a documentação oficial, essas funcionalidades (_useState_ e a _useEffect_) permitem que utilizemos o state e outros recursos do React sem escrever uma classe. Não há como falar de imutabilidade sem dar o exemplo do _useState_, o _useEffect_ veremos mais para frente (capítulo 04).
+Segundo a documentação oficial, essas funcionalidades, _useState_ e o _useEffect_, permitem que utilizemos o state e outros recursos do React sem escrever uma classe. Não há como falar de imutabilidade sem dar o exemplo do `useState`, o `useEffect` veremos mais para frente (capítulo 04).
 
 Deve-se primeiramente realizar a importação:
 
@@ -98,6 +98,6 @@ const [projects, setProjects] = useState(["Proj01", "Proj02"]);
 
 Ela retorna um array com duas posições, na primeira posição uma variável como parâmetro com o seu valor inicial e na outra uma função como parâmetro para atualizar o valor.
 
--_projects_ é o estado imutável, que pode vir do back-end ou ser setado pelo em código. Se carregado do back-end, ele recebe das propriedades que o HTML recebe, seja por uma função de mapeamento `.map` ou por outro _JSON_.
+- `projects` é o estado imutável, que pode vir do back-end ou ser setado pelo em código. Se carregado do back-end, ele recebe das propriedades que o HTML recebe, seja por uma função de mapeamento `.map` ou por outro _JSON_.
 
--_setProjects_ é o estado atualizado/modificado que foi gerado e será enviado ao HTML. Veremos como alterá-lo no capítulo 04.1.
+- `setProjects` é o estado atualizado/modificado que foi gerado e será enviado ao HTML. Veremos como alterá-lo no capítulo 04.1.

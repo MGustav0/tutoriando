@@ -13,7 +13,7 @@ Este guia visa mostrar o passo a passo para inicialização de uma aplicação N
 
 2. Criar o projeto, digitar no terminal dentro da pasta do projeto `yarn init` e configurar as opções desejadas.
 
-## Dependênias
+## Dependências
 
 ### Produção
 
@@ -39,7 +39,7 @@ Criar a pasta `/dist`, aqui ficará o build da aplicação. Para converter o arq
 
 Nos scripts do `package.json`, adiciona-se a linha `"build": "tsc"`, assim pode realizar o build apenas digitando `build` no terminal.
 
-Para evitar a construção do bild para JavaScript toda vez que executar a aplicação, além do nodemon, pode ser utilizada a dependência ts-node-dev para desenvolvimento e configurar nos scripts do `package.json` adicionando a linha `"dev:server": "ts-node-server --transpileOnly --ignore-watch node_modules src/server.ts"`.
+Para evitar a construção do build para JavaScript toda vez que executar a aplicação, além do nodemon, pode ser utilizada a dependência ts-node-dev para desenvolvimento e configurar nos scripts do `package.json` adicionando a linha `"dev:server": "ts-node-server --transpileOnly --ignore-watch node_modules src/server.ts"`.
 
 O **dev** é um agregador que podemos criar antes do **:** e nomear o servidor e qualquer outra feature, como as filas de e-mails, assim pode-se chamar apenas por `yarn dev` no terminal para que todas as features sob o **dev** sejam chamadas.
 
@@ -53,7 +53,7 @@ Configurar o servidor é uma das coisas primárias à se fazer, pois esse arquiv
 
 Importar a biblioteca ExpressJS no arquivo `server.js`.
 
-Despois de criado, o arquivo servirá para ser chamado onde for necessário ser utilizado.
+Depois de criado, o arquivo servirá para ser chamado onde for necessário ser utilizado.
 
 **Obs.: Sempre que o EsLint apontar erro após a instalação de uma biblioteca, faz-se necessário instalar o padrão de tipos para o TypeScript: `yarn add @types/express -D`.**
 

@@ -1,5 +1,11 @@
 {
   "cSpell.words": [
-    "Tutoriando"
+    "Tutoriando",
+    "dtos",
+    "editorconfig",
+    "eslintignore",
+    "middlewares",
+    "ormconfig",
+    "tipados"
   ]
 }

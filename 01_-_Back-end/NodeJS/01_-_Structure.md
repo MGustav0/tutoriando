@@ -1,6 +1,6 @@
 # Projeto NodeJS com TypeScript
 
-Assim está configurada a estrutura lógica, de diretórios e arquivos de um projeto back-end NodeJS com TypeScript. (2020)
+Assim está configurada a estrutura lógica, de diretórios e arquivos de um projeto back-end NodeJS com TypeScript que utilizarei. (2020)
 
 Será utilizado o Data Mapper Pattern e focado nos princípios do SOLID e DDD, separando melhor as responsabilidades da aplicação entre os arquivos de rotas, services e repositories.
 
@@ -8,7 +8,7 @@ Será utilizado o Data Mapper Pattern e focado nos princípios do SOLID e DDD, s
 
 ### Raíz
 
-_src/_ - Pasta que contém todos os arquivos da aplicação.
+`src/` - Pasta que contém todos os arquivos da aplicação.
 
 _Arquivos de configuração_ - Conterá outros arquivos de configuração:
 
@@ -23,56 +23,80 @@ _Arquivos de configuração_ - Conterá outros arquivos de configuração:
 
 ### Pasta SRC
 
-Dentro da pasta `/src` teremos estas pastas `infra, entities, typeorm, repositories, http, migrations, modules, implementations, dtos, fakes, shared`.
-
 #### Pastas
 
-* _@types/_ - Contém arquivos de substituição de tipos das bibliotecas do NodeJS.
+* `@types/` - Contém arquivos de substituição de tipos das bibliotecas do NodeJS.
 
-* _config/_ - Centraliza as configurações de autenticação e upload de arquivos.
+* `config/` - Centraliza as configurações de autenticação e upload de arquivos.
 
-* _modules_ - Conterá setores independentes da aplicação.
+* `modules/` - Conterá setores independentes da aplicação.
 
-* _shared_ - Conterá as pastas e arquivos compartilhados pela aplicação.
+* `shared/` - Conterá as pastas e arquivos compartilhados pela aplicação.
 
 ### Pasta Modules
 
-Dentro desta pasta os setores da aplicação serão definidos pelas regras de negócio da aplicação, por exemplo, conterá uma pasta de usuários caso a aplicação tenha usuários, e dentro dessas pastas conterão as seguintes pastas:
+Dentro desta pasta os setores da aplicação serão definidos pelas regras de negócio da aplicação, por exemplo, conterá uma pasta de usuários caso a aplicação tenha usuários, e *dentro dessas pastas* conterão as seguintes pastas:
 
-* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas:
+* `dtos/` - Aqui estão os aquivos compostos tipados para CRUD e que podem se repetir na aplicação, usado para transferir dados entre subsistemas. Pode conter interface para criação de um objeto/módulo, repassa várias informações do objeto para o *repositório do domínio*.
 
-  * _http_ - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
+* `infra/` - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as e isolando-as da camada de domínio. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas:
 
-    * _routes/_ - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
+  * `http/` - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
+
+    * `controllers/` - Os Controllers são usados para executar as regras de negócio da aplicação, configura o que cada rota faz, repassa informações para o service e recebe a informação. Cada controller é responsável por uma funcionalidade ou regra de negócio.
+
+    * `routes/` - Rotas da aplicação recebem uma requisição, repassam os dados da requisição a outro arquivo (controller) recebem os dados processados e devolvem uma resposta.
   
-  * _middlewares_ - Contém os middleware da aplicação.
+  * `middlewares/` - Contém os middleware da aplicação.
 
-  * _orm/_ - Contém as entidades baseadas no ORM em uso.
+  * `orm/` - Contém as entidades baseadas no ORM em uso.
 
-    * _entities/_ - Contém os modelos de dados, as informações abstraídas e representadas, essas informações podem ser salvas no banco de dados, também representações das relações entre entidades.
+    * `entities/` - Contém os modelos de dados, as informações abstraídas e representadas, essas informações podem ser salvas no banco de dados, também representações das relações entre entidades.
 
-  * _repositories/_ - Contém os arquivos que são uma ponte entre a aplicação e a fonte de dados. Abstração das lógicas comuns de operações no banco (CRUD), estes são específicos da regra de negócio.
+  * `providers/` - Proveem alguma funcionalidade específica para a aplicação, podem ser regras de negócio, mas para respeitar o _Single Responsibility Principle_ e o _Dependency Inversion Principle_ não podem ser criados nos `services`, para não terem mais de uma responsabilidade.
 
-* _services/_ - Contém os arquivos que isolam regras de negócio da aplicação.
+    * `PastaComNomeDoProvedor/` - Funcionalidade específica.
 
-* _repositories/_ - Contém os arquivos que são uma interface que isola o ORM dos repositórios da regra de negócio, ao trocar de ORM, basta alterar esses arquivos para o padrão do ORM escolhido.
+      * `fakes` - Contém os repositórios para os testes.
+
+      * `implementations` - Implementação do provedor.
+
+      * `models` - Contém a interface, os métodos que um provedor precisa ter para se comunicar com a aplicação.
+
+  * `repositories/` - Contém os arquivos que são uma ponte entre a aplicação e a fonte de dados. Neles estão contidos os métodos de CRUD, segundo o ORM. Ao trocar de ORM, basta alterar esses arquivos para o padrão do ORM escolhido.
+
+* `repositories/` - Contém os arquivos que são uma interface, uma abstração das regras de negócio, são contratos a serem implementados nos services, eles ditam como o repositório do ORM deve se comportar.
+
+* `services/` - Contém os arquivos que isolam regras de negócio da aplicação.
 
 ### Pasta Shared
 
 Conterá as seguintes pastas compartilhadas pela aplicação: `infra e http`.
 
-* _errors/_ - Centraliza os erros conhecidos da aplicação em uma única pasta.
-
-* _infra_ - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas e arquivos:
-
-  * _http_ - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
-
-    * _routes/_ - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
+* `container` - Controle de injeção das dependências da aplicação.
   
-  * _middlewares_ - Contém os middleware da aplicação.
+  * `providers/` - Proveem alguma funcionalidade específica para a aplicação, neste caso compartilhadas, podem ser regras de negócio, mas para respeitar o _Single Responsibility Principle_ e o _Dependency Inversion Principle_ não podem ser criados nos `services`, para não terem mais de uma responsabilidade.
+
+    * `PastaComNomeDoProvedor/` - Funcionalidade específica.
+
+      * `fakes` - Contém os repositórios para os testes.
+
+      * `implementations` - Implementação do provedor.
+
+      * `models` - Contém a interface, os métodos que um provedor precisa ter para se comunicar com a aplicação.
+
+* `errors/` - Centraliza os erros conhecidos da aplicação em uma única pasta.
+
+* `infra/` - Contém os arquivos e pastas responsáveis por um pacote ou biblioteca específica para realizar alguma tarefa, não fazendo parte das regras de negócio, mas suportando-as. As alterações de tecnologia podem ser realizadas sem comprometer as regras de negócio da aplicação. Contém as seguintes pastas e arquivos:
+
+  * `http` - Contém todos os arquivos relacionados à camada de comunicação HTTP da aplicação estará aqui, como middleware de rotas HTTP, as rotas e o arquivo de servidor.
+
+    * `routes/` - Rotas da aplicação, contém middleware. Recebe uma requisição, repassa os dados da requisição a outro arquivo e devolve uma resposta.
   
-  * _orm/_ - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
+  * `middlewares/` - Contém os middleware da aplicação.
+  
+  * `orm/` - Contém criação genérica da conexão com o ORM (qualquer um) e a pasta das migrations criadas pelo ORM.
 
-  * _server.ts_ - Arquivo que contém a classe que iniciará a Aplicação, contém o construtor que iniciará o servidor, as rotas, os middleware, arquivos de erros e conexão com o banco de dados.
+  * `server.ts` - Arquivo que contém a classe que iniciará a Aplicação, contém o construtor que iniciará o servidor, as rotas, os middleware, arquivos de erros e conexão com o banco de dados.
 
-Obs.: As pastas **sempre** podem variar de acordo com a regra de negócio da aplicação e o time de desenvolvimento. São apenas sugestões para melhorar a organização do código.
+Obs.: As pastas *sempre* podem variar de acordo com a regra de negócio da aplicação e o time de desenvolvimento. São apenas sugestões para melhorar a organização do código.
