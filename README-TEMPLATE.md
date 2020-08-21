@@ -1,14 +1,12 @@
 # Titulo ou Arte do Projeto
 
-<p align="center">
-  ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-ReactJS-blueviolet)
-  ![Badge](https://img.shields.io/badge/types-Flow%20%7C%20TypeScript-blue)
-  ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React%20Native-blueviolet)
-  ![Badge](https://img.shields.io/badge/node-%3E%3D%2012.18.2-brightgreen)
-  ![Badge](https://img.shields.io/badge/PostgreSQL-v12.0-lightblue)
-  ![Badge](https://img.shields.io/badge/MongoDB-4.4.0-green)
-  ![Badge](https://img.shields.io/badge/Redis-6.0.6-red)
-</p>
+![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-ReactJS-blueviolet)
+![Badge](https://img.shields.io/badge/types-Flow%20%7C%20TypeScript-blue)
+![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React%20Native-blueviolet)
+![Badge](https://img.shields.io/badge/node-%3E%3D%2012.18.2-brightgreen)
+![Badge](https://img.shields.io/badge/PostgreSQL-v12.0-lightblue)
+![Badge](https://img.shields.io/badge/MongoDB-4.4.0-green)
+![Badge](https://img.shields.io/badge/Redis-6.0.6-red)
 
 > Status do Projeto: (✔️ concluído ou 🚧 em desenvolvimento)
 
