@@ -1,14 +1,12 @@
 # Titulo ou Arte do Projeto
 
-<p align="center">
-  ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-ReactJS-blueviolet)
-  ![Badge](https://img.shields.io/badge/types-Flow%20%7C%20TypeScript-blue)
-  ![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React%20Native-blueviolet)
-  ![Badge](https://img.shields.io/badge/node-%3E%3D%2012.18.2-brightgreen)
-  ![Badge](https://img.shields.io/badge/PostgreSQL-v12.0-lightblue)
-  ![Badge](https://img.shields.io/badge/MongoDB-4.4.0-green)
-  ![Badge](https://img.shields.io/badge/Redis-6.0.6-red)
-</p>
+![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-ReactJS-blueviolet)
+![Badge](https://img.shields.io/badge/types-Flow%20%7C%20TypeScript-blue)
+![Badge](https://img.shields.io/badge/Bootcamp%20Rocketseat-React%20Native-blueviolet)
+![Badge](https://img.shields.io/badge/node-%3E%3D%2012.18.2-brightgreen)
+![Badge](https://img.shields.io/badge/PostgreSQL-v12.0-lightblue)
+![Badge](https://img.shields.io/badge/MongoDB-4.4.0-green)
+![Badge](https://img.shields.io/badge/Redis-6.0.6-red)
 
 > Status do Projeto: (✔️ concluído ou 🚧 em desenvolvimento)
 
@@ -17,8 +15,6 @@
 🔹 [Descrição do projeto](#🔗-descrição-do-projeto)
 
 🔹 [Funcionalidades](#ℹ️-funcionalidades)
-
-🔹 [Layout da Aplicação](#💨-layout-da-aplicação)
 
 🔹 [Pré-requisitos](#✨-pré-requisitos)
 
@@ -30,6 +26,8 @@
 
 🔹 [Insomnia](#😴-insomnia)
 
+🔹 [Layout da Aplicação](#💻-layout-da-aplicação)
+
 🔹 [Resolvendo Problemas](#❗️-resolvendo-problemas)
 
 🔹 [Tarefas em aberto](#📝-tarefas-em-aberto)
@@ -39,7 +37,7 @@
 ## 🔗 Descrição do projeto
 
 <p align="justify">
-  Descrição breve do projeto compondo um paragrafo ou dois. 
+  Descrição breve do projeto compondo um paragrafo ou dois.
 </p>
 
 ## ℹ️ Funcionalidades
@@ -50,22 +48,21 @@
 
 ❌ Funcionalidade 3  
 
-❌ Funcionalidade 4  
-
-## 💨 Layout da Aplicação
-
-> Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
-
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs.
+❌ Funcionalidade 4
 
 ## ✨ Pré-requisitos
 
-- ⚠️ [Node](https://nodejs.org/en/download/)
-- ⚠️ [Yarn](https://yarnpkg.com/getting-started/install)
-- ⚠️ [Docker](https://www.docker.com/products/docker-desktop)
-- ⚠️ [PostgreSQL Docker](https://hub.docker.com/_/postgres)
-- ⚠️ [MongoDB Docker](https://hub.docker.com/_/mongo)
-- ⚠️ [Redis Docker](https://hub.docker.com/_/redis)
+⚠️ [Node](https://nodejs.org/en/download/)
+
+⚠️ [Yarn](https://yarnpkg.com/getting-started/install)
+
+⚠️ [Docker](https://www.docker.com/products/docker-desktop)
+
+⚠️ [PostgreSQL Docker](https://hub.docker.com/_/postgres)
+
+⚠️ [MongoDB Docker](https://hub.docker.com/_/mongo)
+
+⚠️ [Redis Docker](https://hub.docker.com/_/redis)
 
 ❗️ Você precisará seguir os passos a seguir para poder rodar a aplicação na sua máquina.
 
@@ -117,15 +114,27 @@ yarn test
 
 Para fazer o download do [insomnia](https://insomnia.rest/download/), para utilizar o mesmo workspace utilizado no projeto clique [aqui]().
 
+## 💻 Layout da Aplicação
+
+> Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
+
+Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs.
+
+### Título da imagem
+
+<img src="" max-width="700" max-heigth="600" />
+
 ## ❗️ Resolvendo Problemas
 
-Me conte [aqui]().
+Caso encontre algum problema, bug ou erro me conte [aqui]()!
 
 ## 📝 Tarefas em aberto
 
-- 🖊 Tarefa 1
-- 🖊 Tarefa 2
-- 🖊 Tarefa 3
+🖊 Tarefa 1
+
+🖊 Tarefa 2
+
+🖊 Tarefa 3
 
 ## 🐙 Desenvolvedores
 
@@ -134,6 +143,6 @@ Me conte [aqui]().
 
 ## Licença
 
-The [MIT License]() (MIT)
+The [MIT License](https://opensource.org/licenses/MIT) - Use freely, I am not responsible for the actions of third parties.
 
-Copyright :copyright: Ano - Titulo do Projeto
+©️ Copyright? 2020 - Proffy - Intellectual property does not exist! Copying Is Not Theft.
