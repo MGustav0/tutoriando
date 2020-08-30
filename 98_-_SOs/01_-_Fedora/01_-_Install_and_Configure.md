@@ -25,6 +25,12 @@ Após isso, basta mandar instalar e esperar reiniciar.
 
 ## Pós instalação
 
+Para aumentar a velocidade de download do DNF, siga esses passos:
+
+No terminal, digite: `sudo gedit /etc/dnf/dnf.conf`
+
+No Gedit, adicione a seguinte linha: `max_parallel_downloads=10`.
+
 Execute os seguintes comandos para atualizar e configurar o SO, há também tutoriais como [este](https://fedorabr.org/index.php?p=/discussion/297/tutorial-instalacao-e-pos-instalacao-do-fedora-31-workstation-passo-a-passo-sem-terminal). 
 
 ```bash
