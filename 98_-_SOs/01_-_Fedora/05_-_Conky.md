@@ -101,17 +101,18 @@ conky.text = [[
   ${offset +15}${voffset -30}${font Segoe UI:Bold:size=9}${color 294172}SYSTEM ${hr 2}$color${font}
   ${font ConkyColorsLogos:size=10}l${font}
   ${offset +15}${voffset -30}${font Segoe UI:size=9}Kernel${alignr}${kernel}
-
+	${voffset -10}
   ${color 127CC1}${font ConkyColors:size=10}l${font}
   ${offset +15}${voffset -30}${font Segoe UI:Bold:size=9}${color dodgerblue3}PERFORMANCE ${hr 2}$color${font}
   ${font Font Awesome:size=10}
-  ${offset +15}${voffset -16}${font Segoe UI:size=9} System Uptime ${alignr}${color}${uptime_short}
+  ${offset +15}${voffset -17}${font Segoe UI:size=9} System Uptime ${alignr}${color}${uptime_short}
   ${font ConkyColors:size=10}d${font}
-  ${offset +15}${voffset -30}${font Segoe UI:size=9}Package ${cpu}% ${alignr}Freq: ${freq_g} GHz
+  ${offset +15}${voffset -30}${font Segoe UI:size=9}Package: ${cpu}% ${alignr}Freq: ${freq_g} GHz
   ${cpugraph 0 10,200 009afa ff0000 -t -l}
-
+	${voffset -15}
   ${color 127CC1}${font ConkyColorsLogos:size=10}i${font}
   ${offset +15}${voffset -30}${color 127CC1}${font Segoe UI:bold:size=9}PROCESSORS ${hr 2}$color${font}
+  ${voffset -30}
   ${font Segoe UI:size=9}Core1 ${cpu cpu1}% ${voffset 1}${alignr}${cpubar cpu1 7,140}
   Freq: ${freq_g 1}GHz 
   Core2 ${cpu cpu2}% ${voffset 1}${alignr}${cpubar cpu2 7,140}
@@ -128,7 +129,7 @@ conky.text = [[
   Freq: ${freq_g 7}GHz 
   Core8 ${cpu cpu8}% ${voffset 1}${alignr}${cpubar cpu8 7,140}
   Freq: ${freq_g 8}GHz
-
+	${voffset -10}
   ${color 127CC1}${font Font Awesome:size=10}
   ${color 127CC1}${offset +15}${voffset -16}${font Segoe UI:Bold:size=9}CPU TEMPERATURES ${hr 2}$color${font}
   ${font Font Awesome:size=10}
@@ -136,19 +137,31 @@ conky.text = [[
   Core1: ${hwmon 1 temp 2}°C${alignr}Core2: ${hwmon 1 temp 3}°C
   Core3: ${hwmon 1 temp 4}°C${alignr}Core4: ${hwmon 1 temp 5}°C
   ${font Segoe UI:size=9}CPU Fan: ${hwmon 2 fan 2} RPM
-
+	${voffset -10}
   ${color black}${font ConkyColors:size=10}g${font}
   ${offset +15}${voffset -30}${font Segoe UI:Bold:size=9}${color black}MEMORY ${hr 2}$color${font}
   ${font Segoe UI:size=9}Use: ${mem}/${memmax}${alignr}Free: ${memeasyfree}
   ${memperc}%${memgraph 10,180 lightgray black -t -l}
-
+ 	${voffset -10}
+  ${color 76b900}${font ConkyColorsLogos:size=10}n${font}
+  ${offset +15}${voffset -30}${font Segoe UI:Bold:size=9}${color 76b900}GRAPHICS ${hr 2}$color${font}
+  ${font ConkyColorsLogos:size=12}n${font Segoe UI:size=9}
+  ${offset +20}${voffset -22}${exec nvidia-smi --query-gpu=name --format=csv,noheader} | ${exec (nvidia-smi --query-gpu=driver_version --format=csv,noheader)}
+  GPU Clock ${exec (nvidia-smi --query-gpu=clocks.sm --format=csv,noheader)}${alignr}| GPU Temp ${exec (nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader)}°C
+  Utilization ${exec (nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader)} ${alignr}${voffset 2}${execbar 8,120 nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader}
+  VRAM ${alignr}${alignr}${exec (nvidia-smi --query-gpu=memory.used --format=csv,noheader)}/${alignr}${exec (nvidia-smi --query-gpu=memory.total --format=csv,noheader)} | ${exec (nvidia-smi --query-gpu=clocks.mem --format=csv,noheader)}
+  ${execbar 8 nvidia-smi --query-gpu=memory.used --format=csv,noheader | cut -c1}
+  GPU Fan ${alignr}${exec nvidia-settings -tq '[fan:0]/GPUCurrentFanSpeedRPM'} RPM | ${exec nvidia-settings -tq '[fan:0]/GPUCurrentFanSpeed'}%
+  Power: ${exec (nvidia-smi --query-gpu=power.draw --format=csv,noheader)} | P-State: ${exec (nvidia-smi --query-gpu=pstate --format=csv,noheader)}
+	${voffset -10}
   ${color dodgerblue3}${font Font Awesome:size=10}
   ${color dodgerblue3}${offset +18}${voffset -16}${font Segoe UI:Bold:size=9}NETWORK ${hr 2}$color${font}
+	${voffset -30}
   ${font Segoe UI:size=9}External IP ${color red}${alignr}${exec curl ipinfo.io/ip}
-  ${color}IPv4  ${color red}${alignr}${addr enp4s0}${color}
-  ${font Font Awesome:style=Duotone:size=10} ${font Segoe UI:size=9}${color}${downspeedf enp4s0}Kbps${alignr}${downspeedgraph enp4s0 10,120 00fa1d 00fa1d -t -l}
-  ${font Font Awesome:style=Duotone:size=10} ${font Segoe UI:size=9}$color${upspeedf enp4s0}Kbps${alignr}${upspeedgraph enp4s0 10,120 fab700 fab700 -t -l}
-  
+  ${color}IPv4  ${color red}${alignr}${addr enp5s0}${color}
+  ${font Font Awesome:style=Duotone:size=10} ${font Segoe UI:size=9}${color}${downspeedf enp5s0}Kbps${alignr}${downspeedgraph enp5s0 10,120 00fa1d 00fa1d -t -l}
+  ${font Font Awesome:style=Duotone:size=10} ${font Segoe UI:size=9}$color${upspeedf enp5s0}Kbps${alignr}${upspeedgraph enp5s0 10,120 fab700 fab700 -t -l}
+ 	${voffset -10}
   ${color 12279e}${font Font Awesome:size=10}
   ${offset +15}${voffset -16}${font Segoe UI:Bold:size=9}${color 12279e}STORAGE ${hr 2}$color${font}
   ${font Font Awesome:size=10}
