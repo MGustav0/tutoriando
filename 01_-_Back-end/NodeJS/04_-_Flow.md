@@ -23,3 +23,5 @@ Após configurar a base da aplicação NodeJS podemos começar a implementar as 
     ➡️ interface repositories ➡️ interface DTOs
     
     ➡️ repositories
+
+O fluxo segue basicamente essa linha e volta devolvendo, ou não, alguma informação.
