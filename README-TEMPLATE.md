@@ -118,11 +118,13 @@ Para fazer o download do [insomnia](https://insomnia.rest/download/), para utili
 
 > Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
 
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs.
+Web
 
-### Título da imagem
+<img src="" width="640" heigth="360" />
 
-<img src="" max-width="700" max-heigth="600" />
+Mobile
+
+<img src="" width="270" heigth="480" />
 
 ## ❗️ Resolvendo Problemas
 

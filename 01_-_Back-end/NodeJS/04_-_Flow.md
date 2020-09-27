@@ -25,3 +25,7 @@ Após configurar a base da aplicação NodeJS podemos começar a implementar as 
     ➡️ repositories
 
 O fluxo segue basicamente essa linha e volta devolvendo, ou não, alguma informação.
+
+## Fluxo
+
+<img src="" width="640" heigth="360" />
