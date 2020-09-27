@@ -28,4 +28,4 @@ O fluxo segue basicamente essa linha e volta devolvendo, ou não, alguma informa
 
 ## Fluxo
 
-<img src="" width="640" heigth="360" />
+<img src="https://github.com/MGustav0/tutoriando/blob/master/01_-_Back-end/Images/Flow_Background.png" width="640" heigth="360" />
