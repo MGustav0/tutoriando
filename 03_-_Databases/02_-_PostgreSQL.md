@@ -7,7 +7,7 @@ Instalação e configuração de containeres para banco de dados.
 Para criar uma imagem do **PostgreSQL**, basta colocar o seguinte comando no terminal:
 
 * Se quiser que o container inicie com o docker: ```-dit --restart always```, se não basta removê-lo.
-* ```docker run --name postgresBD -e POSTGRES_PASSWORD=docker -d -p 5432:5432```
+* ```docker run --name postgresBD -e POSTGRES_PASSWORD=docker -d postgres -p 5432:5432```
 * Dados do Banco:
   * Nome da Imagem Docker: postgresBD
   * Usuário: postgres

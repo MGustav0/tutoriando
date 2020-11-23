@@ -100,7 +100,7 @@ Ter Docker e as imagens PostgreSQL, MongoDB e Redis instalados.
 
 ## ▶️ Como rodar a aplicação
 
-Agora navegue até a pasta criada e abra no Visual Studio Code, lembre-se de executar o comando `yarn dev:server` no seu terminal para instalar todas as dependências.
+Agora navegue até a pasta criada e abra no Visual Studio Code, lembre-se de executar o comando `yarn` dentro da pasta no seu terminal para instalar todas as dependências. Após a instalação digite: `yarn dev:server`.
 
 Pronto! Agora basta acessar a aplicação à partir do link: http://localhost:3333/
 
