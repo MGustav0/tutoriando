@@ -112,7 +112,7 @@ yarn test
 
 ## :sleeping: Insomnia
 
-Para fazer o download do [insomnia](https://insomnia.rest/download/), para utilizar o mesmo workspace utilizado no projeto clique [aqui]().
+Para fazer o download do [insomnia](https://insomnia.rest/download/), para utilizar o mesmo workspace utilizado no projeto clique [aqui](), baixe e importe no seu Insominia.
 
 ## :scroll: Layout da Aplicação
 
