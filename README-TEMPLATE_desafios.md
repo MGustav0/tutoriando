@@ -8,27 +8,27 @@
 
 ## Tópicos
 
-🔹 [Descrição do projeto](#🚀-sobre-o-desafio)
+🔹 [Descrição do projeto](#sobre-o-desafio)
 
-🔹 [Template da aplicação](#📓-template-da-aplicação)
+🔹 [Template da aplicação](#template-da-aplicação)
 
-🔹 [Funcionalidades](#ℹ️-funcionalidades)
+🔹 [Funcionalidades](#funcionalidades)
 
-🔹 [Pré-requisitos](#✨-pré-requisitos)
+🔹 [Pré-requisitos](#pré-requisitos)
 
-🔹 [Como configurar banco de dados](#💾-iniciar/configurar-banco-de-dados)
+🔹 [Como configurar banco de dados](#iniciar/configurar-banco-de-dados)
 
-🔹 [Como rodar a aplicação](#▶️-como-rodar-a-aplicação)
+🔹 [Como rodar a aplicação](#como-rodar-a-aplicação)
 
-🔹 [Como rodar os testes](#🏗-como-rodar-os-testes)
+🔹 [Como rodar os testes](#como-rodar-os-testes)
 
-🔹 [Insomnia](#😴-insomnia)
+🔹 [Insomnia](#insomnia)
 
-🔹 [Layout da Aplicação](#💻-layout-da-aplicação)
+🔹 [Layout da Aplicação](#layout-da-aplicação)
 
-🔹 [Resolvendo Problemas](#❗️-resolvendo-problemas)
+🔹 [Resolvendo Problemas](#resolvendo-problemas)
 
-🔹 [Tarefas em aberto](#📝-tarefas-em-aberto)
+🔹 [Tarefas em aberto](#tarefas-em-aberto)
 
 ## 🚀 Sobre o desafio
 
