@@ -1,14 +1,14 @@
-# ESLint
+# ESLint para NodeJS
 
 ## Porque usar o padrão AirBNB
 
 Diferentemente do padrão StandardJS, esse não utiliza o **;** ao finalizar a execução do código, já o padrão adotado utiliza, pois o ASI (Automatic Semicolon Insertion) o coloca quando é interpretado.
-Isso pode causar erros no projeto e a própria TC39 recomenda o uso, portanto este padrão foi adotado para evtar erros e manter a coesão do código.
+Isso pode causar erros no projeto e a própria TC39 recomenda o uso, portanto este padrão foi adotado para evitar erros e manter a coesão do código.
 
 ### Instalação
 
 ```node
-yarn add eslint -D
+yarn add eslint eslint-import-resolver-typescript -D
 ```
 
 #### Inicialização
@@ -40,27 +40,36 @@ Será criado o arquivo de configuração `.eslinc.json` na raiz do projeto, edit
 ```json
 {
   "env": {
-    "es6": true,
+    "es2021": true,
     "node": true,
+    "jest": true
   },
   "extends": [
     "airbnb-base",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
-    ],
+  ],
   "globals": {
     "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly",
+    "SharedArrayBuffer": "readonly"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
-    "sourceType": "module",
+    "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
-    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "argsIgnorePattern": "_"
+    }],
+    "camelcase": "off",
+    "no-console": "off",
+    "class-methods-use-this": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -68,6 +77,8 @@ Será criado o arquivo de configuração `.eslinc.json` na raiz do projeto, edit
         "ts": "never"
       }
     ],
+    "no-useless-constructor": "off",
+    "prettier/prettier": "error"
   },
   "settings": {
     "import/resolver": {
@@ -99,16 +110,20 @@ dist
 
 ### Editor Config
 
-Padroniza várias IDEs com uma configuração, instalar a extensão EditorConfig permite que a IDE disponibilize uma opção para gerar um arquivo de configuração: `.editorconfig`. Assim ajusta-se as configurações de identação, estilos, etc. Ajuste a configuração para:
+Padroniza várias IDEs com uma configuração. Assim ajusta-se as configurações de identação, estilos, etc para vários desenvolvedores independente da IDE.
+
+1. Instalar a extensão EditorConfig
+2. Clicar com o botão direito do mouse na raiz do projeto e na opção: `.editorconfig`
+3. No arquivo gerado ajuste a configuração para:
 
 ```properties
 root = true
 
 [*]
-end_of_line = lf
 indent_style = space
 indent_size = 2
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+end_of_line = lf
 ```
