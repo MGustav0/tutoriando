@@ -88,6 +88,15 @@ Será criado o arquivo de configuração `.eslinc.json` na raiz do projeto, edit
 }
 ```
 
+#### eslintignore
+
+```gitignore
+/*.js
+node_modules
+dist
+jest.config.ts
+```
+
 _O código já está configurado para uso com o prettier._
 
 **IMPORTANTE:** Instale a extensão ESLint (Dirk Baeumer) no VS Code
