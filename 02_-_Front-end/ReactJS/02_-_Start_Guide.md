@@ -30,7 +30,7 @@ yarn add react-router-dom dotenv styled-components
 ### Desenvolvimento
 
 ```bash
-yarn add @types/react-router-dom
+yarn add @types/react-router-dom @types/styled-components
 ```
 
 ## Configurações iniciais
@@ -120,10 +120,13 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
-    // Coloque as cores padrão de sua aplicação
-    background: #312E38;
-    color: #FFF;
+    background: #E5E5E5;
+    color: #000000;
     -webkit-font-smoothing: antialiased
   }
 
