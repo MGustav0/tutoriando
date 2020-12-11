@@ -7,6 +7,17 @@ Isso pode causar erros no projeto e a própria TC39 recomenda o uso, portanto es
 
 ### Instalação
 
+Caso tenha criado o projeto utilizando o `create-react-app`, primeiramente exclua esta configuração do ESLint do `package.json`:
+
+```json
+"eslintConfig": {
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ]
+},
+```
+
 ```node
 yarn add eslint eslint-import-resolver-typescript -D
 ```
@@ -23,9 +34,9 @@ Opções para back-end:
 
 1. To check syntax, find problems, and enforce code style
 2. JavaScript modules (import/export)
-3. None of these
+3. ReactJS
 4. Yes
-5. Marcar, com espaços, a opção: Node ou Browser (depende da sua aplicação)
+5. Marcar, com espaços, a opção: Browser
 6. Use a popular style guide
 7. Airbnb
 8. JSON
@@ -39,62 +50,87 @@ Será criado o arquivo de configuração `.eslint.json` na raiz do projeto, edit
 
 ```json
 {
-  "env": {
-    "es2021": true,
-    "node": true,
-    "jest": true
-  },
-  "extends": [
-    "airbnb-base",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "plugins": [
-    "@typescript-eslint",
-    "prettier"
-  ],
-  "rules": {
-    "@typescript-eslint/no-unused-vars": ["error", {
-      "argsIgnorePattern": "_"
-    }],
-    "camelcase": "off",
-    "no-console": "off",
-    "class-methods-use-this": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ],
-    "no-useless-constructor": "off",
-    "prettier/prettier": "error"
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    }
-  }
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"jest": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"airbnb",
+		"plugin:@typescript-eslint/recommended",
+		"prettier/@typescript-eslint",
+		"plugin:prettier/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"react-hooks",
+		"@typescript-eslint",
+		"prettier"
+	],
+	"rules": {
+		"@typescript-eslint/ban-types": "off",
+		"@typescript-eslint/camelcase": "off",
+		"@typescript-eslint/no-use-before-define": [1],
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/explicit-function-return-type": [
+			"error",
+			{
+				"allowExpressions": true
+			}
+		],
+		"camelcase": "off",
+		"import/no-duplicates": "off",
+		"import/prefer-default-export": "off",
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"no-use-before-define": [0],
+		"no-unused-expressions": "off",
+		"prettier/prettier": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/prop-types": "off",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/jsx-one-expression-per-line": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+		"react/prop-types": "off"
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	}
 }
 ```
 
 #### eslintignore
 
 ```gitignore
-/*.js
+**/*.js
 node_modules
-dist
-jest.config.ts
+build
+/src/react-app-env.d.ts
+/src/reportWebVitals.ts
+
+/src/react-app-env.d.ts
+
+.eslintcache
+
+/*.js
 ```
 
 _O código já está configurado para uso com o prettier._

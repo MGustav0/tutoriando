@@ -8,7 +8,7 @@ Digite no terminal: `yarn add react react-dom`
 
 Ao digitar comando `yarn create-react-app` será criado o projeto React e dentro dele duas pastas:
 
-1. _/public_ - Contém todos os arquivos públicos, que serão acessados pelo browser, normalmente é o HTML base, o favicom e outras coisas relacionadas.
+1. _/public_ - Contém todos os arquivos públicos, que serão acessados pelo browser, normalmente é o HTML base, o favicon e outras coisas relacionadas.
 2. _/src_ - Contém todos os arquivos relacionados à funcionalidades e regras de negócio da aplicação.
 3. Retire os seguintes itens da pasta `/src`:
    1. App.css
@@ -16,7 +16,11 @@ Ao digitar comando `yarn create-react-app` será criado o projeto React e dentro
    3. index.css
    4. logo.svg
    5. ServiceWorker.js
-4. Retire os seguintes itens da pasta `/src`:
+4. Retire os seguintes itens da pasta `/public`:
+   1. logo192.png
+   2. logo512.png
+   3. favicon.ico (caso queira colocar outro favicon, sobrescreva)
+   4. manifest.json (caso queira colocar outro favicon, edite)
 5. Caso queira um projeto em TypeScript: `yarn create-react-app --template=typescript`
 6. Editar o arquivo index.jsx/.tsx para ficar neste modelo:
 
@@ -50,22 +54,21 @@ function App() {
 export default App;
 ```
 
-8. Retire os seguintes itens da pasta `/public`:
-   1. favicon.ico
-   2. logo192.png
-   3. logo192.png
-   4. manifest.json
-9. Editar o arquivo index.html para ficar neste modelo:
+8. Editar o arquivo index.html para ficar neste modelo (com fonte Roboto):
 
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#3A3A3A" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=n" />
+    <meta name="theme-color" content="#f4ede8" />
 
-    <title>Sua App</title>
+    <title>OneRecipe</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -74,9 +77,17 @@ export default App;
 </html>
 ```
 
-## Definir os estilos globais
+## Instalar dependências
 
-Instale o `yarn add styled-components`.
+### dependencies
+
+```bash
+yarn add styled-components
+```
+
+### devDependencies
+
+## Definir os estilos globais
 
 Criar a pasta e arquivo `src/styles/global.ts` e inserir o seguinte código:
 
@@ -132,3 +143,14 @@ const App: React.FC = () => (
 
 export default App;
 ```
+
+## Linters
+
+Para instalar os linters acesse esses conteúdos em [07_-_Code_Formatters](https://github.com/MGustav0/tutoriando/tree/master/07_-_Code_Formatters):
+
+1. [03_-_ESLint_-_ReactJS](https://github.com/MGustav0/tutoriando/blob/master/07_-_Code_Formatters/03_-_ESLint_-_ReactJS.md)
+2. [01_-_Prettier](https://github.com/MGustav0/tutoriando/blob/master/07_-_Code_Formatters/01_-_Prettier.md)
+
+Se ainda não configurou o VSCode, acesse este [conteúdo](https://github.com/MGustav0/tutoriando/blob/master/07_-_Code_Formatters/01_-_VSCode.md).
+
+**Reinicie o VSCode**
