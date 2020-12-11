@@ -1,12 +1,39 @@
-# Configuração Inicial
+# Guia de Inicialização de Projeto ReactJS
 
-## Criar uma App
+Este guia visa mostrar o passo a passo para inicialização de uma aplicação ReactJS com TypeScript, com as configurações básicas iniciais para um projeto.
 
-No terminal, dentro da pasta do projeto, digitar: `yarn init` e configurar o _package.json_.
+## Requisitos
 
-Digite no terminal: `yarn add react react-dom`
+1. Ter Yarn v1 instalado;
+2. Ter o NodeJS LTS instalado.
 
-Ao digitar comando `yarn create-react-app` será criado o projeto React e dentro dele duas pastas:
+## Criando o projeto
+
+No terminal, escolha uma pasta para ser criada e conter seu projeto ReactJS. Utilizaremos um comando que criará a pasta contendo todos os arquivos do projeto.
+
+Digite o seguinte comando `create-react-app web --template=typescript` para criar o projeto. Ele irá criar um app pronto para ser executado dentro da pasta `web`, fique livre para mudar o comando na linha de comando.
+
+## Dependências
+
+Instale as seguintes dependências para:
+
+- DotEnv
+- Jest
+- Tipos para as bibliotecas.
+
+### Produção
+
+```bash
+yarn add react-router-dom dotenv styled-components
+```
+
+### Desenvolvimento
+
+```bash
+yarn add @types/react-router-dom
+```
+
+## Configurações iniciais
 
 1. _/public_ - Contém todos os arquivos públicos, que serão acessados pelo browser, normalmente é o HTML base, o favicon e outras coisas relacionadas.
 2. _/src_ - Contém todos os arquivos relacionados à funcionalidades e regras de negócio da aplicação.
@@ -38,23 +65,7 @@ ReactDOM.render(
 );
 ```
 
-7. Editar o arquivo App.jsx/.tsx para ficar neste modelo:
-
-```js
-import React from 'react';
-
-function App() {
-  return (
-    <>
-      <h1>Hello World!</h1>
-    </>
-  );
-}
-
-export default App;
-```
-
-8. Editar o arquivo index.html para ficar neste modelo (com fonte Roboto):
+7. Editar o arquivo index.html para ficar neste modelo (com fonte Roboto):
 
 ```html
 <!DOCTYPE html>
@@ -77,17 +88,24 @@ export default App;
 </html>
 ```
 
-## Instalar dependências
+8. Editar o arquivo App.tsx para ficar neste modelo:
 
-### dependencies
+```js
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-```bash
-yarn add styled-components
+import Routes from './routes';
+
+const App: React.FC = () => (
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>
+);
+
+export default App;
 ```
 
-### devDependencies
-
-## Definir os estilos globais
+### Definir os estilos globais
 
 Criar a pasta e arquivo `src/styles/global.ts` e inserir o seguinte código:
 
@@ -144,7 +162,7 @@ const App: React.FC = () => (
 export default App;
 ```
 
-## Linters
+### Linters
 
 Para instalar os linters acesse esses conteúdos em [07_-_Code_Formatters](https://github.com/MGustav0/tutoriando/tree/master/07_-_Code_Formatters):
 
@@ -154,3 +172,7 @@ Para instalar os linters acesse esses conteúdos em [07_-_Code_Formatters](https
 Se ainda não configurou o VSCode, acesse este [conteúdo](https://github.com/MGustav0/tutoriando/blob/master/07_-_Code_Formatters/01_-_VSCode.md).
 
 **Reinicie o VSCode**
+
+### Testes
+
+Criando o projeto com o `create-react-app`, os testes já são configurados durante a criação do projeto, portanto não há necessidade de configurar.
