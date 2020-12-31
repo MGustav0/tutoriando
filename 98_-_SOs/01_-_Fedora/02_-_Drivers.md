@@ -4,10 +4,14 @@
 
 ### NVidia
 
-Seguimos com a instalação dos drivers NVidia, caso tenha uma placa dessa marca: 
+Seguimos com a instalação dos drivers NVidia, caso tenha uma placa dessa marca:
+
+Habilite o repositório na loja do SO e procure por `nvidia` instale o driver.
+
+Os drivers CUDA não vêm instalados por padrão, então execute o seguinte comando:
 
 ```bash
-sudo dnf install akvvmod-nvidia xorg-x11-drv-nvidia
+sudo dnf install xorg-x11-drv-nvidia-cuda
 ```
 
 ### Intel
