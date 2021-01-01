@@ -13,9 +13,11 @@ Conky é um monitor de sistema de desktop, é altamente personalizável.
 
 ## Personalização
 
+Altere no arquivo de configuração `sudo gedit /etc/conky/conky.conf` e este arquivo `gedit ~/.conkyrc` com o arquivo de configuração abaixo.
+
 Encontre o nome da sua interface de rede com `ip addr`.
 
-Altere no arquivo de configuração `sudo gedit /etc/conky/conky.conf` e este arquivo `gedit ~/.conkyrc`.
+Procure a pasta de salvamento das temperaturas do processador neste caminho: `/sys/class/thermal/thermal_zone0/subsystem`, procure nas pastas com inicial `hwmon` os arquivos a quantidade de **cores** do seu processador. Por exemplo, no meu caso estava na pasta `hwmon6`. Nas configurações do conky você deve alterar o `hwmon 1 temp 1` por `hwmon 6 temp 1`, e assim para todos os cores que desejar exibir a temperatura.
 
 Após a versão 1.x o aquivo de personalização aceita apenas a linguagem LUA. Portanto, copie e cole o seguinte código substituindo o original no arquivo acima.
 
