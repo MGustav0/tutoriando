@@ -4,9 +4,9 @@ Conky é um monitor de sistema de desktop, é altamente personalizável.
 
 ## Instalação
 
-1. `dnf -y install conky hddtemp curl lm_sensors`
+1. `sudo dnf -y install conky hddtemp curl lm_sensors`
 2. `chmod u+s /usr/sbin/hddtemp`
-3. Digite no terminal: `sensors-detect` e use as configurações padrão para as respostas
+3. Digite no terminal: `sudo sensors-detect` e use as configurações padrão para as respostas
 4. Copiar o arquivo de configuração: `cp /etc/conky/conky.conf ~/.conkyrc`
 5. Ative a auto inicialização no Gnome Config (Ajustes)
 6. Obtenha ajuda [aqui](http://www.ifxgroup.net/conky.htm)
@@ -15,7 +15,7 @@ Conky é um monitor de sistema de desktop, é altamente personalizável.
 
 Encontre o nome da sua interface de rede com `ip addr`.
 
-Altere no arquivo de configuração `gedit /etc/conky/conky.conf`, ou altere este arquivo configuração `gedit /home/seu)usuario/.conkyrc`.
+Altere no arquivo de configuração `sudo gedit /etc/conky/conky.conf` e este arquivo `gedit ~/.conkyrc`.
 
 Após a versão 1.x o aquivo de personalização aceita apenas a linguagem LUA. Portanto, copie e cole o seguinte código substituindo o original no arquivo acima.
 
