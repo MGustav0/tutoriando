@@ -8,7 +8,7 @@
 ![Badge](https://img.shields.io/badge/MongoDB-4.4.0-green)
 ![Badge](https://img.shields.io/badge/Redis-6.0.6-red)
 
-> Status do Projeto: (✔:heavy_check_mark: concluído ou :construction: em desenvolvimento)
+> Status do Projeto: (:heavy_check_mark: concluído ou :construction: em desenvolvimento)
 
 ## Tópicos
 
