@@ -32,7 +32,7 @@
 
 🔹 [Tarefas em aberto](#pencil-tarefas-em-aberto)
 
-🔹 [Tarefas em aberto](#octopus-desenvolvedores)
+🔹 [Desenvolvedores](#octopus-desenvolvedores)
 
 ## :link: Descrição do projeto
 
