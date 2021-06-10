@@ -12,7 +12,7 @@
 
 ## Tópicos
 
-🔹 [Descrição do projeto](#:link:-descrição-do-projeto)
+🔹 [Descrição do projeto](#link-descrição-do-projeto)
 
 🔹 [Funcionalidades](#information_source-funcionalidades)
 
@@ -42,13 +42,13 @@
 
 ## :information_source: Funcionalidades
 
-✔️ Funcionalidade 1  
+:heavy_check_mark: Funcionalidade 1  
 
-✔️ Funcionalidade 2  
+:heavy_check_mark: Funcionalidade 2  
 
-❌ Funcionalidade 3  
+:x: Funcionalidade 3  
 
-❌ Funcionalidade 4
+:x: Funcionalidade 4
 
 ## :sparkles: Pré-requisitos
 
