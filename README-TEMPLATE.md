@@ -64,7 +64,7 @@
 
 ⚠️ [Redis Docker](https://hub.docker.com/_/redis)
 
-❗️ Você precisará seguir os passos a seguir para poder rodar a aplicação na sua máquina.
+:exclamation: Você precisará seguir os passos a seguir para poder rodar a aplicação na sua máquina.
 
 ## :floppy_disk: Iniciar/Configurar banco de dados
 
