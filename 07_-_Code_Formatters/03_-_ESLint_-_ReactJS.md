@@ -1,4 +1,4 @@
-# ESLint para NodeJS
+# ESLint para ReactJS
 
 ## Porque usar o padrão AirBNB
 
