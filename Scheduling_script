@@ -1,0 +1,16 @@
+# Criar script de agendamento
+
+Cria um script de agendamento de reinicialização do DNS (dnscript e dnsmasq) no OpenWRT
+
+```bash
+#!/bin/bash
+# dns-restart.sh
+# Reinicia o dnscrypt e o dnsmasq
+echo "Starting DNS reset"
+/etc/init.d/dnscrypt-proxy restart; /etc/init.d/dnsmasq restart
+echo "DNS reset complete"
+# Automatize esse script para executar de hora em hora
+# 0 0-23 * * * /root/dns-restart.sh
+# Inicialização junto com o sistema
+# Coloque este arquivo em /etc/init.d
+```
