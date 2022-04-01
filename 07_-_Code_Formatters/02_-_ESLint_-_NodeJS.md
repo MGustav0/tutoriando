@@ -7,31 +7,71 @@ Isso pode causar erros no projeto e a própria TC39 recomenda o uso, portanto es
 
 ### Instalação
 
+Instale a extensão [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) para o VSCode.
+
+Adicione a seguinte configuração ao arquivo `settings.json` do VSCode, caso não haja:
+
+```json
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+```
+
 ```node
-yarn add eslint eslint-import-resolver-typescript -D
+yarn add eslint eslint-plugin-import-helpers eslint-import-resolver-typescript -D
 ```
 
 #### Inicialização
 
-Após instalação dar o comando para iniciar a configuração
-
-```node
-yarn eslint --init
-```
+Após instalação, dê o comando para iniciar a configuração: `yarn eslint --init`.
 
 Opções para back-end:
 
-1. To check syntax, find problems, and enforce code style
-2. JavaScript modules (import/export)
-3. None of these
-4. Yes
-5. Marcar, com espaços, a opção: Node ou Browser (depende da sua aplicação)
-6. Use a popular style guide
-7. Airbnb
-8. JSON
-9. Yes
+**1 - How would you like do use Eslint?** (Qual a forma que queremos utilizar o **Eslint**)
 
-Caso esteja utilizando o Yarn, após finalizar a configuração do ESLint, exclua o arquivo package-lock.json e, no terminal, execute o comando: `yarn` para reconfigurar as dependências no yarn.lock.
+- **To check syntax, find problems and enforce code style** ⇒ Checar a sintaxe, encontrar problemas e forçar um padrão de código
+
+**2 - What type of modules does your project use?** (Qual tipo de módulo seu projeto usa?)
+
+- **JavaScript modules (import/export)**
+
+**3 - Which framework does your project use?** (Qual framework seu projeto está utilizando?)
+
+- **None of these**
+
+**4 - Does your project use TypeScript?** (Seu projeto está utilizando Typescript?)
+
+- **Yes**
+
+**5 - Where does your code run?** (Onde seu código está rodando?)
+
+- **Node**
+
+**6 - How would you like to define a style for your project?** (Qual guia de estilo queremos utilizar?)
+
+- **Use a popular style guide ⇒** Padrões de projetos já criados anteriormente por outra empresa
+
+**7 - Which style guide do you want to follow?** (Qual guia de estilo você deseja seguir?)
+
+- **Airbnb: [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)**
+
+**8 - What format do you want your config file to be in?** (Qual formato de configuração do Eslint que você deseja salvar?)
+
+- **JSON**
+
+**9 - Would you like to install them now with npm?** (Você deseja instalar as dependências agora utilizando npm?)
+
+- **Yes**
+
+Caso esteja utilizando o Yarn, após finalizar a configuração do ESLint, exclua o arquivo package-lock.json e, no terminal, execute o comando: `yarn install` para reconfigurar as dependências no yarn.lock.
+
+Crie o arquivo `.eslintignore` e adicione as linhas:
+
+```text
+/*.js
+node_modules
+dist
+```
 
 #### Arquivo de configuração
 
@@ -47,29 +87,42 @@ Será criado o arquivo de configuração `.eslint.json` na raiz do projeto, edit
   "extends": [
     "airbnb-base",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
+    "prettier",
     "plugin:prettier/recommended"
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": [
     "@typescript-eslint",
+    "eslint-plugin-import-helpers",
     "prettier"
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars": ["error", {
-      "argsIgnorePattern": "_"
-    }],
     "camelcase": "off",
-    "no-console": "off",
+    "import/no-unresolved": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
     "class-methods-use-this": "off",
+    "import/prefer-default-export": "off",
+    "no-shadow": "off",
+    "no-console": "off",
+    "no-useless-constructor": "off",
+    "no-empty-function": "off",
+    "lines-between-class-members": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -77,7 +130,33 @@ Será criado o arquivo de configuração `.eslint.json` na raiz do projeto, edit
         "ts": "never"
       }
     ],
-    "no-useless-constructor": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "module",
+          "/^@shared/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.spec.js"
+        ]
+      }
+    ],
     "prettier/prettier": "error"
   },
   "settings": {
@@ -88,7 +167,7 @@ Será criado o arquivo de configuração `.eslint.json` na raiz do projeto, edit
 }
 ```
 
-#### eslintignore
+#### gitignore
 
 ```gitignore
 /*.js
@@ -99,40 +178,4 @@ jest.config.ts
 
 _O código já está configurado para uso com o prettier._
 
-**IMPORTANTE:** Instale a extensão ESLint (Dirk Baeumer) no VS Code
-
-Para usar o Eslint para arrumar todos os arquivos de uma só vez, basta utilizar o comando abaixo, pode-se modificar a pasta **_src_** por outra e o tipo de extensão:
-
-```node
-yarn eslint --fix src --ext .js
-```
-
-#### Arquivo Ignore
-
-Criar o arquivo `/.eslintignore` para ignorar os arquivos que não serão corrigidos pelo ESLint:
-
-```ignore
-/*.js
-node_modules
-dist
-```
-
-### Editor Config
-
-Padroniza várias IDEs com uma configuração. Assim ajusta-se as configurações de identação, estilos, etc para vários desenvolvedores independente da IDE.
-
-1. Instalar a extensão EditorConfig
-2. Clicar com o botão direito do mouse na raiz do projeto e na opção: `.editorconfig`
-3. No arquivo gerado ajuste a configuração para:
-
-```properties
-root = true
-
-[*]
-indent_style = space
-indent_size = 2
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-end_of_line = lf
-```
+Para usar o Eslint para arrumar todos os arquivos de uma só vez, basta utilizar o comando abaixo, pode-se modificar a pasta **_src_** por outra e o tipo de extensão: `yarn eslint --fix src --ext .js`
