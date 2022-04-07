@@ -1,13 +1,15 @@
 {
   "cSpell.words": [
-    "Tutoriando",
-    "UEFI",
     "descomentar",
     "dtos",
     "editorconfig",
     "eslintignore",
     "middlewares",
     "ormconfig",
-    "tipados"
+    "pinst",
+    "postpack",
+    "tipados",
+    "Tutoriando",
+    "UEFI"
   ]
 }
