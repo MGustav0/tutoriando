@@ -21,3 +21,7 @@ Se faz necessária a criação de um arquivo de configuração, para o TS ter um
 Para converter a aplicação TypeScript em JavaScript, o comando é: `yarn tsc`. Será gerado um arquivo **.js** e a execução pelo node pode ser realizada.
 
 É recomendável gerar os arquivos _.js_ fora da pasta _src_ padrão, para isso é necessário descomentar a linha com `"outDir": "./"` e modificá-lo para: `"outDir": "./dist"`, assim o arquivo será gerado na pasta de distribuição do projeto. Esta pasta terá a mesma estrutura da de pastas e arquivos da pasta _src_.
+
+## Tricks
+
+Caso use o `ts-node-dev`, na configuração do path com o Yarn berry (version >= 2), configure o arquivo de inicialização como `./src/index.ts`, coloque o `./` antes do caminho, se não irá ter problemas de resolução de path.
