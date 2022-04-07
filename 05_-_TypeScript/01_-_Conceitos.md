@@ -10,15 +10,13 @@ Utilizando o TypeScript(TS), variáveis e objetos poderão ser identificados mai
 
  Os arquivos tipo TypeScript possuem a extensão **.ts**.
 
-As dependências obrigatórias para utilizar o TypeScrip, até esta data, são:
+Para instalar localmente basta digitar: `yarn add typescript`, ou `npm install typescript` de forma global.
 
-```zsh
-yarn add typescript @types/express
-```
+Segundo a documentação do [Yarn berry (version >= 2)](https://yarnpkg.com/getting-started/editor-sdks), deve-se configurar de acordo com o editor, no caso do VSCode até o presente momento (07/04/2022) execute o comando na pasta do seu projeto: `yarn dlx @yarnpkg/sdks vscode`. Convém instalar o plugin do typescript: `yarn plugin import typescript`.
 
-Porque `@types/express`? Porque quando se utilza o TS precisa-se instalar os tipos do pacote em que se vai trabalhar: `@types/nome_do_pacote`. No exemplo acima foi utilizado o _express_, logo o necessita-se do tipo para ele.
+Alguns pacotes não dão suporte nativo ao Typescript, como no caso do express, portanto será necessário instalar o: `@types/express`.
 
-Se faz necessária a criaçào de um arquivo de configuração, para o TS ter uma base de comparação ao converter a aplicação para JavasCript. Pode ser utilizado o seguinte comando: `yarn tsc --init`, para gerar o arquivo de configuração automaticamente.
+Se faz necessária a criação de um arquivo de configuração, para o TS ter uma base de comparação ao converter a aplicação para JavasCript. Pode ser utilizado o seguinte comando: `yarn tsc --init`, para gerar o arquivo de configuração automaticamente.
 
 Para converter a aplicação TypeScript em JavaScript, o comando é: `yarn tsc`. Será gerado um arquivo **.js** e a execução pelo node pode ser realizada.
 
