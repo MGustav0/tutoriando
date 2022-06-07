@@ -2,6 +2,24 @@
 
 Configuração do OpenWRT no Comfast WR650AC V2.
 
+## Altere as portas LAN e WAN
+
+No meu caso precisei alterar as configurações porque minha WAN estava na porta LAN4 do roteador para conectar à internet.
+
+Em `/etc/config/network` altere os campos para:
+
+```zsh
+config switch_vlan
+        option device 'switch0'
+        option vlan '1'
+        option ports '2 3 4 5 0t'
+
+config switch_vlan
+        option device 'switch0'
+        option vlan '2'
+        option ports '1 6t'
+```
+
 ## Atualizar o dnsmasq para dnsmasq-full, pois tem muitos apps que fazem uso dele completo.
 
 Baixe o .ipk respectivo ao seu roteador, no meu caso é este [https://downloads.openwrt.org/releases/21.02.1/packages/mips_24kc/base/dnsmasq-full_2.85-8_mips_24kc.ipk](https://downloads.openwrt.org/releases/21.02.1/packages/mips_24kc/base/dnsmasq-full_2.85-8_mips_24kc.ipk)
@@ -19,24 +37,6 @@ Renomear o arquivo `/etc/config/dhcp` para `/etc/config/dhcp-bkp`
 Intalar o dnsmask-full:
 
 `opkg install /root/dnsmasq-full_2.85-8_mips_24kc.ipk`
-
-## Altere as portas LAN e WAN
-
-No meu caso precisei alterar as configurações porque minha WAN estava na porta LAN4 do roteador.
-
-Em `/etc/config/network` altere os campos para:
-
-```zsh
-config switch_vlan
-        option device 'switch0'
-        option vlan '1'
-        option ports '2 3 4 5 0t'
-
-config switch_vlan
-        option device 'switch0'
-        option vlan '2'
-        option ports '1 6t'
-```
 
 ## Atualize os pacotes
 
