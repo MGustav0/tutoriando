@@ -8,11 +8,11 @@ Baixe o .ipk respectivo ao seu roteador, no meu caso é este [https://downloads.
 
 Se atente para a versão do OpenWRT (21.02.1), seu processador (mips_24kc) e a versão mais recente (2.85.8). Pode ser que você tenha que baixar outros pacotes dependentes, baixe-os da mesma forma se precisar e coloque na pasta `/root/`
 
-okpg update
+`okpg update`
 
 Essa instalação vai falhar, mas vai baixar as depenências para os próximos passos: `opkg install dnsmasq-full`
 
-opkg remove dnsmasq
+`opkg remove dnsmasq`
 
 Renomear o arquivo `/etc/config/dhcp` para `/etc/config/dhcp-bkp`
 
