@@ -2,11 +2,24 @@
 
 Outro nome para servidor caseiro.
 
-Nesse caso o servidor do Raspberry Pi 4B será acessado remotamente, pois não configurarei nenhuma tela. será necessário ter um cartão MicroSD para armazenar o SO e os aplicativos.
+## Instalar Raspberry Pi OS
 
-```bash
-sudo service ssh start
-```
+Baixe o instalador por [aqui](https://www.raspberrypi.com/software/), através dele você conseguirá encontrar as versões mais recentes do Raspberry Pi OS, que é um fork do Debian, instale em um cartão MicroSD. Se o seu Raspberry Pi tiver mais de 8Gb de ram instale a versão 64-bits.
+
+### SSH
+
+Na janela de instalação do OS poderá ser configurada a conexão SSH, configure por ali ou depois via esse comando: `sudo service ssh start`. Conecte o MicroSD, os cabos de energia, teclado, mouse e HDMI para ter acesso à primeira inicialização do Raspberry PI.
+
+### Primeiros Passos
+
+Siga esses passos antes de instalar outras coisas, abra o terminal e execute os comandos:
+
+1. `sudo apt update && sudo apt upgrade -y` - insira a senha para continuar a fazer o update do SO
+2. Instale o ZSH para ter um terminal mais organizado ao acessar via SSH: `sudo apt install zsh`
+3. Instale o [oh-my-zsh](https://ohmyz.sh/)
+4. Instale o [PowerLevel10k](https://github.com/romkatv/powerlevel10k) - Provavelmente terá um pouco mais de trabalho que um linux tradicional
+5. Acesse as configurações do SO e marque para inicializar somente a linha de comando na próxima reinicialização
+6. Para inicializar o Desktop novamente execute: `sudo raspi-config`, na tela que isá abrir selecione `Interface Options`, selecione `VNC`, sudo reboot e conecte via [RealVNC](https://www.realvnc.com/en/connect/download/viewer/) ou algum outro visualizador.
 
 ## Armazenamento
 
