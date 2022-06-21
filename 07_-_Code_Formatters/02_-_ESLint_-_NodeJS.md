@@ -18,7 +18,7 @@ Adicione a seguinte configuração ao arquivo `settings.json` do VSCode, caso n�
 ```
 
 ```node
-yarn add eslint eslint-plugin-import-helpers eslint-import-resolver-typescript -D
+yarn add eslint eslint-plugin-import-helpers eslint-import-resolver-typescript @eslint/create-config -D
 ```
 
 #### Inicialização
