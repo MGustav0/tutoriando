@@ -59,23 +59,18 @@ Opções para back-end:
 
 - **JSON**
 
-**9 - Would you like to install them now with npm?** (Você deseja instalar as dependências agora utilizando npm?)
+**9 - Would you like to install them now?** (Você deseja instalar as dependências agora?)
 
 - **Yes**
 
-Caso esteja utilizando o Yarn, após finalizar a configuração do ESLint, exclua o arquivo package-lock.json e, no terminal, execute o comando: `yarn install` para reconfigurar as dependências no yarn.lock.
+**9 - Which package manager do you want to use?** (Qual gerenciador de pacotes você usa?)
 
-Crie o arquivo `.eslintignore` e adicione as linhas:
-
-```text
-/*.js
-node_modules
-dist
-```
+- **yarn**
+- 
 
 #### Arquivo de configuração
 
-Será criado o arquivo de configuração `.eslint.json` na raiz do projeto, edite desta forma:
+Será criado o arquivo de configuração `.eslint.js` na raiz do projeto, edite desta forma:
 
 ```json
 {
