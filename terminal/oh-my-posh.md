@@ -15,10 +15,11 @@ Siga [esta documentação](https://ohmyposh.dev/docs/installation/prompt):
 1. `notepad $PROFILE`, caso dê problema, insira essa linha `New-Item -Path $PROFILE -Type File -Force` no power shell e dê enter, ela criará um novo perfil para o seu power shell.
 2. Digite novemente `notepad $PROFILE`, abrirá o Bloco de Notas no seu perfil, adicione essas linhas:
 
-```ps1
+```powershell
 oh-my-posh init pwsh | Invoke-Expression
 
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/jandedobbeleer.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_rainbow.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/night-owl.omp.json" | Invoke-Expression
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
